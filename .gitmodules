@@ -1,0 +1,3 @@
+[submodule "post-protos"]
+	path = post-protos
+	url = https://github.com/Jamshid90/post-protos.git
