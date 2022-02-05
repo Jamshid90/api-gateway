@@ -2,7 +2,7 @@
 
 1. Copy the contents of `.env-example` to `.env`
 2. Run `docker-compose up -d --build` to start the project locally
-4. Visit the documentation page: http://localhost:9000
+4. Visit the page: http://localhost:9000
 
 ## Database migrations
 #### Install golang-migrations
