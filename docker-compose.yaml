@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  api-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-gateway:latest
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/data
+    networks:
+      - app-net   
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  
+    env_file: .env
+    environment:
+        - ENVIRONMENT
+        - LOG_LEVEL
+        - CONTEXT_TIMEOUT
+        - SERVER_PROTOCOL
+        - SERVER_HOST
+        - SERVER_PORT
+        - POST_SERVICE_HOST
+        - POST_SERVICE_PORT
+        - POST_IMPORT_SERVICE_HOST
+        - POST_IMPORT_SERVICE_PORT
+networks:
+  app-net:
+      driver: bridge
+         
